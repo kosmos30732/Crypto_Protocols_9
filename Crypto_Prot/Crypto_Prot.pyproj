@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>7c4783a5-e31e-43f3-af03-76cc5523ae55</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Lab5_Alice.py</StartupFile>
+    <StartupFile>lab1_server.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,6 +21,8 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="lab1_client.py" />
+    <Compile Include="lab1_server.py" />
     <Compile Include="lab3.py" />
     <Compile Include="Lab5_Alice.py" />
     <Compile Include="Lab5_Bob.py" />
