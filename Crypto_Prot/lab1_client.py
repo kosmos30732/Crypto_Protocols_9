@@ -3,6 +3,7 @@ import hashlib
 
 SERVER_HOST = "127.0.0.1"
 SERVER_PORT = 12345
+check = False
 dictionary = [
     "A",
     "ABE",
@@ -2084,6 +2085,50 @@ def get_words(hash_input):
         res += (dictionary[int(str_byte[:11], 2)]) + " "
         str_byte = str_byte[11:]
     return res[:-1]
+
+
+if check:
+    seed = "alpha1"
+    pass_phrase = "AbCdEfGhIjK"
+    inp = seed + pass_phrase
+    _hash = get_hash(inp.encode(), 1)
+    res = "Для seed= alpha1 и pass phrase= AbCdEfGhIjK и Count= 1   "
+    for i in range(8):
+        res += hex(_hash[i]) + " "
+    print(f"{res}  {get_words(_hash)}")
+
+    _hash = get_hash(inp.encode(), 2)
+    res = "Для seed= alpha1 и pass phrase= AbCdEfGhIjK и Count= 2   "
+    for i in range(8):
+        res += hex(_hash[i]) + " "
+    print(f"{res}  {get_words(_hash)}")
+
+    _hash = get_hash(inp.encode(), 100)
+    res = "Для seed= alpha1 и pass phrase= AbCdEfGhIjK и Count= 100 "
+    for i in range(8):
+        res += hex(_hash[i]) + " "
+    print(f"{res}  {get_words(_hash)}")
+
+    seed = "correct"
+    pass_phrase = "OTP's are good"
+    inp = seed + pass_phrase
+    _hash = get_hash(inp.encode(), 1)
+    res = "Для seed= correct и pass phrase= OTP's are good и Count= 1   "
+    for i in range(8):
+        res += hex(_hash[i]) + " "
+    print(f"{res}  {get_words(_hash)}")
+
+    _hash = get_hash(inp.encode(), 2)
+    res = "Для seed= correct и pass phrase= OTP's are good и Count= 2   "
+    for i in range(8):
+        res += hex(_hash[i]) + " "
+    print(f"{res}  {get_words(_hash)}")
+
+    _hash = get_hash(inp.encode(), 100)
+    res = "Для seed= correct и pass phrase= OTP's are good и Count= 100 "
+    for i in range(8):
+        res += hex(_hash[i]) + " "
+    print(f"{res}  {get_words(_hash)}")
 
 
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

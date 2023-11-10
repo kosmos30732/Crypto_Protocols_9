@@ -4,13 +4,18 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>7c4783a5-e31e-43f3-af03-76cc5523ae55</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>lab1_server.py</StartupFile>
+    <StartupFile>lab1_client.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>Crypto_Prot</Name>
     <RootNamespace>Crypto_Prot</RootNamespace>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <CommandLineArguments>
+    </CommandLineArguments>
+    <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
+    <IsWindowsApplication>False</IsWindowsApplication>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>

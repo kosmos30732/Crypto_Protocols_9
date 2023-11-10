@@ -2117,7 +2117,7 @@ pass_phrase = "A_Valid_Pass_Phrase"
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server_socket.bind((HOST, PORT))
 server_socket.listen()
-print("Сервер ожидает подключения...\n\n")
+
 while True:
     comand = input("keyinit для инициализации или Enter чтобы продолжить? ")
     if comand == "keyinit":
@@ -2125,9 +2125,10 @@ while True:
         seed = input("Введите seed=")
         pass_phrase = input("Введите парольную фразу=")
         print(f"Успешно изменено")
-
+    print("Сервер ожидает подключения...\n\n")
+    seed = str(random.randint(1, 10000))
     client_socket, addr = server_socket.accept()
-    print(f"Подключено к {addr}")
+    print(f"Подключено к {addr[0]}:{addr[1]}")
     print(f"Отправляем на сервер\n\tПорядковый номер: {sequence_number} Seed: {seed}")
     client_socket.send(f"Порядковый номер: {sequence_number} Seed: {seed}".encode())
     server_otp = get_words(get_hash((seed + pass_phrase).encode(), sequence_number + 1))
